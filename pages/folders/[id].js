@@ -6,6 +6,7 @@ import { getChildren } from "../../utils/api";
 import { Spinner } from "@chakra-ui/react";
 import ControlBar from "../../components/ControlBar";
 import { useFiles, useFolders } from "../../hooks/zustand";
+import Head from "next/head";
 export default function FolderTemplate({ id }) {
   const updateFiles = useFiles((state) => state.updateFiles);
   const updateFolders = useFolders((state) => state.updateFolders);
@@ -17,6 +18,9 @@ export default function FolderTemplate({ id }) {
   }, [id]);
   return (
     <Layout>
+      <Head>
+        <title>ImgDrive</title>
+      </Head>
       <ControlBar parent={id} />
       <FolderView />
       <FileView />

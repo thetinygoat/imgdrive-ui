@@ -1,5 +1,7 @@
 import axios from "axios";
-const api = axios.create({ baseURL: "http://localhost:8080/api" });
+const api = axios.create({
+  baseURL: "https://polar-depths-49240.herokuapp.com/api",
+});
 export const getRootData = async () => {
   const data = await api.get("/dir");
   return data.data;
